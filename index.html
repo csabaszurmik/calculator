@@ -7,12 +7,42 @@
   <title>Virgo System Calculator</title>
   <meta name="description" content="Virgo System Calculator">
   <meta name="author" content="Csaba Szurmik">
-
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css?v=1.0">
 
 </head>
 
 <body>
+    <div class="calculator">
+
+        <div class="display">
+            <div class="stack"></div>
+            <div class="total"></div>
+        </div>
+        <div class="btns">
+            <div class="btn btn-digit" data-value="7">7</div>
+            <div class="btn btn-digit" data-value="8">8</div>
+            <div class="btn btn-digit" data-value="9">9</div>
+            <div class="btn btn-function disabled" data-value="delete"><span class="material-icons material-icons-outlined">backspace</span></div>
+            
+            <div class="btn btn-digit" data-value="4">4</div>
+            <div class="btn btn-digit" data-value="5">5</div>
+            <div class="btn btn-digit" data-value="6">6</div>
+            <div class="btn btn-function btn-operator disabled" data-value="+">+</div>
+            
+            <div class="btn btn-digit" data-value="1">1</div>
+            <div class="btn btn-digit" data-value="2">2</div>
+            <div class="btn btn-digit" data-value="3">3</div>
+            <div class="btn btn-function btn-operator disabled" data-value="-">-</div>
+            
+            <div class="btn btn-function" data-value="plusminus">+/-</div>
+            <div class="btn btn-digit" data-value="0">0</div>
+            <div class="btn btn-function disabled" data-value="reset">C</div>
+            <div class="btn btn-function btn-operator disabled" data-value="=">=</div>
+        </div>
+    </div>
   <script src="js/scripts.js"></script>
 </body>
 </html>

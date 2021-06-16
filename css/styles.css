@@ -1,0 +1,79 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%; /* 10px: 62.5% of browser default 16px font size */
+}
+
+body {
+  box-sizing: border-box; /*border and padding no longer added to width and height */
+  font-family: 'Open Sans', sans-serif;
+}
+.calculator {
+    max-width: 30rem;
+    margin: auto;
+    border: 1px solid #000;
+}
+.display {
+    width: 100%;
+    height: 20rem;
+    background-color: beige;
+    padding: 2rem;
+    overflow: auto;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+}
+.display .stack {
+    overflow: auto;
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    align-content: flex-end;
+}
+.display .total {
+    padding-top: 1rem;
+    text-align: right;
+    font-size: 2rem;
+    font-weight: 800;
+}
+.row {
+    font-size: 1.6rem;
+    text-align: right;
+}
+.row.operand {
+    font-weight: 700;
+}
+.row.operator {
+    padding-left: .5rem;
+    padding-right: .5rem;
+}
+.btns {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: .2rem;
+    width: 100%;
+}
+.btn {
+    height: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #82b2b3;
+    font-size: 1.6rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+.btn:hover {
+    background-color: cadetblue;
+}
+.btn.disabled {
+    opacity: .5;
+    cursor: not-allowed;
+}
