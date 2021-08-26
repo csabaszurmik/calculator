@@ -8,14 +8,14 @@ let stack = [];
 
 digitBtns.forEach(item => {
     item.addEventListener('click', event => {
-        if (event.target.classList.contains('disabled')) {
+        if (item.classList.contains('disabled')) {
             return false;
         }
         let lastItem = stack.slice(-1)[0];
         if (lastItem && lastItem.type === "operand") {
-            lastItem.value = (lastItem.value.toString()+event.target.dataset.value)*1;
+            lastItem.value = (lastItem.value.toString() + item.dataset.value) * 1;
         } else {
-            stack.push({type: 'operand', value: event.target.dataset.value*1});
+            stack.push({type: 'operand', value: item.dataset.value * 1});
         }
         checkOperators();
         updateDisplay();
@@ -105,10 +105,10 @@ function reset() {
 }
 
 function calculate() {
-    let operands = stack.filter(item=>item.type==='operand').map(item => item.value);
-    let operators = stack.filter(item=>item.type==='operator').map(item => item.value);
+    let operands = stack.filter(item => item.type === 'operand').map(item => item.value);
+    let operators = stack.filter(item => item.type === 'operator').map(item => item.value);
     let total = operands.reduce((total, value, index) => {
-        if (index===0) {
+        if (index === 0) {
             return total + value;
         }
         if (operators[index-1] === '+') {
